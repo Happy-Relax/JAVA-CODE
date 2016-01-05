@@ -17,7 +17,8 @@ public class KlassTest {
     public void should_assignLeader_leader(){
         int number=1;
         Klass klass=new Klass(number);
-        klass.assignLeader("N");
-        assertThat(klass.getleader(),is("N"));
+        Student student=new Student("Tom",21,2,1);
+        klass.assignLeader(student);
+        assertThat(student.klass.getleader(),is("Y"));
     }
 }

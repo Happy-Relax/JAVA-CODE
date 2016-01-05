@@ -3,7 +3,7 @@
  */
 public class Klass {
     private Integer number;
-    private String leader;
+    private String leader="out";
 
     public Klass(int number) {
         this.number=number;
@@ -17,11 +17,13 @@ public class Klass {
         return number;
     }
 
-    public void assignLeader(String leader) {
-        this.leader=leader;
+    public void assignLeader(Student student) {
+        student.klass.leader="Y";
     }
 
     public String getleader() {
         return leader;
     }
+
+
 }

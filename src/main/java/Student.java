@@ -2,7 +2,7 @@
  * Created by liujia on 1/5/16.
  */
 public class Student extends Person{
-    private Klass klass;
+    public Klass klass;
 
     public Student(String name, int age,int klass) {
         super(name, age);
@@ -26,7 +26,5 @@ public class Student extends Person{
         return klass.getNumber();
     }
 
-    public void setklass(String leader) {
-        this.klass.assignLeader(leader);
-    }
+
 }
