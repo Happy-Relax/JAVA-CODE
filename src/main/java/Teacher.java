@@ -3,11 +3,11 @@
  */
 public class Teacher extends Person{
 
-    private Integer klass=null;
+    private Klass klass=new Klass(null);
 
     public Teacher(String name, int age, int klass) {
         this(name, age);
-        this.klass = klass;
+        this.klass = new Klass(klass);
     }
 
     public Teacher(String name, int age) {
@@ -16,12 +16,12 @@ public class Teacher extends Person{
 
     public Teacher(String name, int age, int klass, int id) {
         super(name, age, id);
-        this.klass=klass;
+        this.klass = new Klass(klass);
     }
 
     public String introduce() {
-        String klassString="Class "+this.klass+".";
-        if(this.klass==null){
+        String klassString="Class "+this.klass.getNumber()+".";
+        if(this.klass.getNumber()==null){
             klassString="No Class.";
         }
         return super.introduce()+" I am a Teacher. I teach "+klassString;
@@ -29,7 +29,7 @@ public class Teacher extends Person{
 
     public String introduceWith(Student student) {
         String teacherString="I don't teach "+student.getName()+".";
-        if(student.getKlass()==this.klass){
+        if(student.getKlassNumber()==this.klass.getNumber()){
             teacherString="I teach "+student.getName()+".";
         }
         return super.introduce()+" I am a Teacher. "+teacherString;
