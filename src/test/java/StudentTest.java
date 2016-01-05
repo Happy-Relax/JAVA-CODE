@@ -31,6 +31,7 @@ public class StudentTest {
         int number=2;
         int id=1;
         Student student=new Student(name,age,number,id);
+        student.klass.appenMember(student);
         assertThat(student.introudce(),is("My name is Tom. I am 21 years old. I am a Student. I am at Class 2."));
 
     }
@@ -41,8 +42,20 @@ public class StudentTest {
         int number=2;
         int id=1;
         Student student=new Student(name,age,number,id);
+        student.klass.appenMember(student);
         student.klass.assignLeader(student);
         assertThat(student.introudce(),is("My name is Tom. I am 21 years old. I am a Student. I am at Class 2. I am Leader of Class 2."));
+
+    }
+    @Test
+    public void should_student_out_of_class(){
+        String name="Tom";
+        int age=21;
+        int number=2;
+        int id=1;
+        Student student=new Student(name,age,number,id);
+        student.klass.assignLeader(student);
+        assertThat(student.introudce(),is("My name is Tom. I am 21 years old. I am a Student. I am at Class 2."));
 
     }
 

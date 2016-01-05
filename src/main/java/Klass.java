@@ -17,8 +17,14 @@ public class Klass {
         return number;
     }
 
-    public void assignLeader(Student student) {
-        student.klass.leader="Y";
+    public String assignLeader(Student student) {
+        if(student.klass.leader!="out"){
+            student.klass.leader="Y";
+            return "";
+        }
+        else {
+            return "It is not one of us.";
+        }
     }
 
     public String getleader() {
@@ -26,4 +32,7 @@ public class Klass {
     }
 
 
+    public void appenMember(Student student) {
+        student.klass.leader="N";
+    }
 }
