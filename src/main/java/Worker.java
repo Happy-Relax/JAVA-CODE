@@ -10,6 +10,6 @@ public class Worker extends Person{
     }
 
     public String introduce() {
-        return "My name is "+this.getName()+". I am "+this.getAge()+" years old. I am a Worker. I have a job.";
+        return this.baseIntroduce()+" I am a Worker. I have a job.";
     }
 }

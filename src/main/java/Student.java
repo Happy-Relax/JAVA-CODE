@@ -10,6 +10,6 @@ public class Student extends Person{
     }
 
     public String introudce() {
-        return "My name is "+this.getName()+". I am "+this.getAge()+" years old. I am a Student. I am at Class "+this.klass+".";
+        return this.baseIntroduce()+" I am a Student. I am at Class "+this.klass+".";
     }
 }
