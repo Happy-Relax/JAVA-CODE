@@ -2,10 +2,15 @@
  * Created by liujia on 1/5/16.
  */
 public class Student extends Person{
-    private final int klass;
+    private int klass;
 
     public Student(String name, int age,int klass) {
         super(name, age);
+        this.klass=klass;
+    }
+
+    public Student(String name, int age, int klass, int id) {
+        super(name, age, id);
         this.klass=klass;
     }
 

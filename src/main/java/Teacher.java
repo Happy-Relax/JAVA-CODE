@@ -14,6 +14,11 @@ public class Teacher extends Person{
         super(name, age);
     }
 
+    public Teacher(String name, int age, int klass, int id) {
+        super(name, age, id);
+        this.klass=klass;
+    }
+
     public String introduce() {
         String klassString="Class "+this.klass+".";
         if(this.klass==null){

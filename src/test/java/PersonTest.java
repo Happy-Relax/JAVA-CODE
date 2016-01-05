@@ -15,5 +15,14 @@ public class PersonTest {
         assertThat(person.introduce(), is("My name is Tom. I am 21 years old."));
 
     }
+    @Test
+    public void should_show_id(){
+        String name="Tom";
+        int age=21;
+        int id=1;
+        Person person=new Person(name,age,id);
+        assertThat(person.getId(), is(1));
+
+    }
 }
 

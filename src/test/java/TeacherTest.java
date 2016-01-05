@@ -38,4 +38,13 @@ public class TeacherTest {
         Student student=new Student("Jerry",12,2);
         assertThat(teacher.introduceWith(student),is("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry."));
     }
+    @Test
+    public void should_show_id(){
+        String name="Tom";
+        int age=21;
+        int id=1;
+        Teacher teacher=new Teacher(name,age,1,id);
+        assertThat(teacher.getId(),is(1));
+    }
 }
+
