@@ -22,4 +22,20 @@ public class TeacherTest {
         Teacher teacher=new Teacher(name,age);
         assertThat(teacher.introduce(),is("My name is Tom. I am 21 years old. I am a Teacher. I teach No Class."));
     }
+    @Test
+    public void should_introduce_teacher_teach_student(){
+        String name="Tom";
+        int age=21;
+        Teacher teacher=new Teacher(name,age,2);
+        Student student=new Student("Jerry",12,2);
+        assertThat(teacher.introduceWith(student),is("My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry."));
+    }
+    @Test
+    public void should_introduce_teacher_not_teach_student(){
+        String name="Tom";
+        int age=21;
+        Teacher teacher=new Teacher(name,age,1);
+        Student student=new Student("Jerry",12,2);
+        assertThat(teacher.introduceWith(student),is("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry."));
+    }
 }
