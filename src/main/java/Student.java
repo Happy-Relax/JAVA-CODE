@@ -17,26 +17,20 @@ public class Student extends Person{
 
     public String introudce() {
         String leaderString="";
-        if(this.klass.getleader()=="true"){
+        if(this.equals(this.klass.getleader())){
             leaderString=" I am Leader of Class "+this.klass.getNumber()+".";
         }
         return super.introduce()+" I am a Student. I am at Class "+this.klass.getNumber()+"."+leaderString;
     }
 
-    public Integer getKlassNumber() {
-        return this.klass.getNumber();
-    }
-
-
-    public void setKlassNumber(Integer klassNumber) {
-        this.klass.setNumber(klassNumber);
-    }
-
-    public void setLeader(String leader) {
-        this.klass.setLeader(leader);
-    }
 
     public Klass getKlass() {
         return this.klass;
     }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
+    }
+
+    
 }

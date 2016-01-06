@@ -3,7 +3,7 @@
  */
 public class Klass {
     private Integer number=null;
-    private String leader=null;
+    private Student leader=null;
 
     public Klass(int number) {
         this.number=number;
@@ -18,15 +18,15 @@ public class Klass {
     }
 
     public String assignLeader(Student student) {
-        if(student.getKlassNumber()==null){
+        if(student.getKlass()==null){
             return "It is not one of us.";
         }
         else {
-            if (student.getKlassNumber()!=this.number){
+            if (!student.getKlass().equals(this)){
                 return "It is not one of us.";
             }
             else{
-                student.setLeader("true");
+                this.setLeader(student);
                 return "";
             }
         }
@@ -34,14 +34,14 @@ public class Klass {
 
     }
 
-    public String getleader() {
+    public Student getleader() {
         return leader;
     }
 
 
     public void appenMember(Student student) {
 
-        student.setKlassNumber(this.number);
+        student.setKlass(this);
     }
 
     public void setNumber(Integer klassNumber) {
@@ -49,7 +49,7 @@ public class Klass {
 
     }
 
-    public void setLeader(String leader) {
+    public void setLeader(Student leader) {
         this.leader = leader;
     }
 

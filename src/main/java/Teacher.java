@@ -45,7 +45,7 @@ public class Teacher extends Person{
     public String introduceWith(Student student) {
         String teacherString="I don't teach "+student.getName()+".";
         for (int i=0;i<this.klasses.size();i++){
-            if(student.getKlassNumber()==this.klasses.get(i).getNumber()){
+            if(this.klasses.get(i).equals(student.getKlass())){
                 teacherString="I teach "+student.getName()+".";
                 break;
             }
