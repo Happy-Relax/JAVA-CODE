@@ -19,5 +19,19 @@ public class HelloWorldTest {
         when(helloWorld.beenCalled()).thenReturn("Leave me alone.");
 
         assertThat(helloWorld.beenCalled(), is("Leave me alone."));
+
+        Student jerry=new Student("Jerry",21,new Klass(2),1);
+        Student jim=new Student("Jim",21,new Klass(2),2);
+        Klass klass = new Klass(2);
+        klass.appenMember(jerry);
+        klass.assignLeader(jerry);
+
+        klass.assignLeader(jim);
+
+        new Klass(1);
+        new Klass(1);
+
+        String a = null;
+        System.out.println("a".equals(null));
     }
 }

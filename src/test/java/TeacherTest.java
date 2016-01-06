@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -26,16 +29,18 @@ public class TeacherTest {
     public void should_introduce_teacher_teach_student(){
         String name="Tom";
         int age=21;
+        Klass klass=new Klass(2);
         Teacher teacher=new Teacher(name,age,2);
-        Student student=new Student("Jerry",12,2);
+        Student student=new Student("Jerry",12,klass);
         assertThat(teacher.introduceWith(student),is("My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry."));
     }
     @Test
     public void should_introduce_teacher_not_teach_student(){
         String name="Tom";
         int age=21;
+        Klass klass=new Klass(2);
         Teacher teacher=new Teacher(name,age,1);
-        Student student=new Student("Jerry",12,2);
+        Student student=new Student("Jerry",12,klass);
         assertThat(teacher.introduceWith(student),is("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry."));
     }
     @Test
@@ -45,6 +50,26 @@ public class TeacherTest {
         int id=1;
         Teacher teacher=new Teacher(name,age,1,id);
         assertThat(teacher.getId(),is(1));
+    }
+    @Test
+    public void should_print_classes(){
+        String name="Tom";
+        int age=21;
+        int id=1;
+        List<Klass> klasses=new ArrayList<Klass>();
+        klasses.add(new Klass(2));
+        klasses.add(new Klass(3));
+        Teacher teacher=new Teacher(name,age,klasses,id);
+        assertThat(teacher.introduce(),is("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2, 3."));
+    }
+    @Test
+    public void should_print_no_class(){
+        String name="Tom";
+        int age=21;
+        int id=1;
+        List<Klass> klasses=new ArrayList<Klass>();
+        Teacher teacher=new Teacher(name,age,klasses,id);
+        assertThat(teacher.introduce(),is("My name is Tom. I am 21 years old. I am a Teacher. I teach No Class."));
     }
 }
 
