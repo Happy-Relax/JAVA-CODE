@@ -53,4 +53,15 @@ public class Teacher extends Person{
         }
         return super.introduce()+" I am a Teacher. "+teacherString;
     }
+
+    public Boolean isTeaching(Student student) {
+        boolean teach_this_student=false;
+        for (int i = 0; i<this.klasses.size(); i++){
+            if (this.klasses.get(i).isIn(student)){
+                teach_this_student=true;
+                break;
+            }
+        }
+        return teach_this_student;
+    }
 }

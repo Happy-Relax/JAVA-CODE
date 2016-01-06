@@ -71,5 +71,24 @@ public class TeacherTest {
         Teacher teacher=new Teacher(name,age,klasses,id);
         assertThat(teacher.introduce(),is("My name is Tom. I am 21 years old. I am a Teacher. I teach No Class."));
     }
+    @Test
+    public void should_isTeaching_return_true_when_teacher_teach_the_student(){
+        List<Klass> klasses=new ArrayList<Klass>();
+        Klass klassOne=new Klass(1);
+        klasses.add(klassOne);
+        Teacher teacher=new Teacher("Tom", 21,klasses, 1);
+        Student student=new Student("Tom", 21,klassOne, 1);
+        assertThat(teacher.isTeaching(student),is(true));
+    }
+    @Test
+    public void should_isTeaching_return_false_when_teacher_not_teach_the_student(){
+        List<Klass> klasses=new ArrayList<Klass>();
+        Klass klassOne=new Klass(1);
+        Klass klassTwo=new Klass(2);
+        klasses.add(klassTwo);
+        Teacher teacher=new Teacher("Tom", 21,klasses, 1);
+        Student student=new Student("Tom", 21,klassOne, 1);
+        assertThat(teacher.isTeaching(student),is(false));
+    }
 }
 

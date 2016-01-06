@@ -46,14 +46,18 @@ public class KlassTest {
         Student student=new Student("Tom",21,new Klass(2),1);
         assertThat(klass.assignLeader(student),is("It is not one of us."));
     }
-//    @Test
-//    public void should_isIn_give_true_when_student_in_classes(){
-//        int number=1;
-//        List<Klass> klasses=new ArrayList<Klass>();
-//        klasses.add(new Klass(1));
-//        klasses.add(new Klass(2));
-//        Klass klass=new Klass(number);
-//        Student student=new Student("Tom",21,2,1);
-//        assertThat(klass.(student,klasses),is("true"));
-//    }
+    @Test
+    public void should_isIn_give_true_when_student_in_class(){
+        Klass klassOne=new Klass(1);
+        Student student=new Student("Tom",21,klassOne,1);
+        assertThat(klassOne.isIn(student),is(true));
+    }
+    @Test
+    public void should_isIn_give_false_when_student_not_in_class(){
+        Klass klassOne=new Klass(1);
+        Klass klassTwo=new Klass(2);
+        Student student=new Student("Tom",21,klassOne,1);
+        assertThat(klassTwo.isIn(student),is(false));
+    }
+
 }

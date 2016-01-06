@@ -71,4 +71,8 @@ public class Klass {
         result = 31 * result + (leader != null ? leader.hashCode() : 0);
         return result;
     }
+
+    public boolean isIn(Student student) {
+        return this.equals(student.getKlass());
+    }
 }
